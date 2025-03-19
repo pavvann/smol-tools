@@ -1,5 +1,6 @@
 import './globals.css'
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'smol tools',
@@ -35,7 +36,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
