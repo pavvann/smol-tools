@@ -15,7 +15,7 @@ export default function Home() {
             simple mini tools for devs
           </p>
           <p className="mt-2 md:mt-0">
-            For feature requests please DM <a href="https://t.me/pavvannn" className="text-purple-600 dark:text-purple-400 hover:underline">@pavvannn</a> on Telegram
+            For feature requests please DM <a href="https://t.me/pavvannn" className="text-purple-600 dark:text-purple-400 hover:underline" target="_blank" rel="noopener noreferrer">@pavvannn</a> on Telegram
           </p>
         </div>
 
