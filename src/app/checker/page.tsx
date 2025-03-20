@@ -11,12 +11,13 @@ export default function NFTChecker() {
   const [tokenId, setTokenId] = useState("");
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [name, setName] = useState<string | null>(null);
 
   const checker = async () => {
     try {
       setError(null);
       setResult(null);
-  
+
       if (!(network in chainInfo)) {
         setError('Selected network not found in config.');
         return;
@@ -30,14 +31,24 @@ export default function NFTChecker() {
           setError('Token ID is required for ERC1155.');
           return;
         }
-        abi = ["function balanceOf(address account, uint256 id) external view returns (uint256)"];
+        abi = ["function balanceOf(address account, uint256 id) external view returns (uint256)", "function name() external view returns (string)"];
         const contract = new ethers.Contract(contractAddress, abi, provider);
-        const check = await contract.balanceOf(walletAddress, tokenId);
-        setResult(`Balance: ${check.toString()}`);
+        const [balance, _name] = await Promise.all([
+          contract.balanceOf(walletAddress, tokenId),
+          contract.name()
+        ]);
+
+        setName(`Name: ${_name}`)
+        setResult(`Balance: ${balance.toString()}`);
       } else {
-        abi = ["function balanceOf(address owner) external view returns (uint256)"];
+        abi = ["function balanceOf(address owner) external view returns (uint256)", "function name() external view returns (string)"];
         const contract = new ethers.Contract(contractAddress, abi, provider);
-        const check = await contract.balanceOf(walletAddress);
+        const [check, _name] = await Promise.all([
+          contract.balanceOf(walletAddress),
+          contract.name()
+        ]);
+
+        setName(`Name: ${_name}`)
         setResult(`Balance: ${check.toString()}`);
       }
     } catch (error) {
@@ -82,7 +93,12 @@ export default function NFTChecker() {
         />
         <button onClick={checker} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Check NFTs</button>
 
-        {result && <div className="p-2 border rounded bg-green-100 text-green-700">{result}</div>}
+        {result && (
+          <div className="p-2 border rounded bg-green-100 text-green-700">
+            <div>{name}</div>
+            <div>{result}</div>
+          </div>
+        )}        
         {error && <div className="p-2 border rounded bg-red-100 text-red-700">{error}</div>}
       </div>
     </main>
