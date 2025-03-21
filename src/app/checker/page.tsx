@@ -24,7 +24,7 @@ export default function NFTChecker() {
       }
 
       const provider = new ethers.JsonRpcProvider(chainInfo[network as keyof typeof chainInfo].rpcUrl);
-
+      console.log(provider)
       let abi;
       if (nftType === "1155") {
         if (!tokenId) {
@@ -63,6 +63,16 @@ export default function NFTChecker() {
       <div className="flex flex-col gap-4 w-96">
         <select className="p-2 border rounded" value={network} onChange={(e) => setNetwork(e.target.value)}>
           <option value="monadTestnet">Monad Testnet</option>
+          <option value="ethereum">Ethereum Mainnet</option>
+          <option value="base">Base</option>
+          <option value="polygon">Polygon POS</option>
+          <option value="arbitrum">Arbitrum One</option>
+          <option value="opmainnet">OP Mainnet</option>
+          <option value="bnb">BNB Smart Chain</option>
+          <option value="celo">Celo</option>
+          <option value="scroll">Scroll</option>
+          <option value="mantle">Mantle</option>
+
         </select>
         <select className="p-2 border rounded" value={nftType} onChange={(e) => setNftType(e.target.value)}>
           <option value="721">ERC721</option>
