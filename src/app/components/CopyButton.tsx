@@ -22,11 +22,11 @@ export default function CopyButton({textToCopy}: CopyButtonProps) {
         <button onClick={handleCopy} className="flex items-center space-x-2">
             {copied ? (
                 <>
-                <Check className="w-4 h-4" /> <span>Copied!</span>
+                <Check className="w-4 h-4" />
                 </>
             ) : (
                 <>
-                <Clipboard className="w-4 h-4" /> <span>Copy</span>
+                <Clipboard className="w-4 h-4" />
                 </>
             )}
         </button>
