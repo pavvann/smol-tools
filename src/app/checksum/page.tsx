@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import { useState } from "react";
 import CopyButton from "../components/CopyButton";
 
-export default function checksum () {
+export default function Checksum () {
     
     const [userAddress, setUserAddress] = useState("")
     const [checksumedAddress, setChecksumedAddress]  = useState("")
