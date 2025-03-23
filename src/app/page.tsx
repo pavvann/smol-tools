@@ -26,7 +26,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <h2 className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-3">NFT Checker</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Verify NFT ownership and metadata quickly and easily
+                Verify NFT ownership and metadata
               </p>
               <div className="flex items-center text-purple-600 dark:text-purple-400 font-medium">
                 Get Started
@@ -40,7 +40,20 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-pink-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <h2 className="text-2xl font-bold text-pink-600 dark:text-pink-400 mb-3">ETH Converter</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Convert between ETH, GWEI and WEI with precision
+                Convert between ETH, GWEI and WEI 
+              </p>
+              <div className="flex items-center text-pink-600 dark:text-pink-400 font-medium">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </Link>
+          <Link href="/checksum/" className="w-full">
+            <div className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-pink-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <h2 className="text-2xl font-bold text-pink-600 dark:text-pink-400 mb-3">Checksum/ICAP Address</h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Get Checksumed Address
               </p>
               <div className="flex items-center text-pink-600 dark:text-pink-400 font-medium">
                 Get Started

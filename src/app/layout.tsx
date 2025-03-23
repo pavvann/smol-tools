@@ -7,12 +7,12 @@ import Footer from '@/app/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'smol tools | Simple Crypto Utilities',
-  description: 'Simple tools for crypto enthusiasts - NFT checking and ETH conversion',
+  title: 'smol tools',
+  description: 'simple tools for devs',
   openGraph: {
-    title: 'smol tools | Simple Crypto Utilities',
-    description: 'Simple tools for crypto enthusiasts - NFT checking and ETH conversion',
-    url: 'https://smoltools.yourdomain.com',
+    title: 'smol tools',
+    description: 'simple tools for devs',
+    url: 'https://smoltools.xyz',
     siteName: 'smol tools',
     images: [
       {
